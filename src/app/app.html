@@ -1,6 +1,17 @@
 <div class="max-h-dvh flex flex-col p-5 gap-4">
 
-  <p class="text-2xl font-bold uppercase text-center">Catalogo de peliculas</p>
+  <div class="flex  justify-center gap-10 items-center">
+    <p class="text-2xl font-bold uppercase text-center">Catalogo de peliculas</p>
+    <form (ngSubmit)="submitForm()" [formGroup]="authForm">
+      <input 
+      type="text" 
+  formControlName="query"
+      name="query"
+      placeholder="Parametro de busqueda" 
+      class="border border-gray-500 px-2 rounded">
+      <button type="submit" class="hover:cursor-pointer hover:bg-gray-300">Buscar</button>
+    </form>
+  </div>
   <div class="grid grid-cols-3 md:grid-cols-5 gap-4 overflow-y-scroll" >
     <app-tv-card *ngFor="let item of tvshows" [tvShow]="item"></app-tv-card>
   </div>

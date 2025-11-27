@@ -11,7 +11,7 @@ export class TvApi {
 
   constructor(private http: HttpClient) {}
 
-  getTxShows(q: string = 'a') {
+  getTxShows(q: string) {
     return this.http.get<any>(this.urlBase + `?q=${q}`).pipe(
       map((resp:any)=>{
         return resp
