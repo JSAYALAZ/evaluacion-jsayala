@@ -1,0 +1,7 @@
+<div class="max-h-dvh flex flex-col p-5 gap-4">
+
+  <p class="text-2xl font-bold uppercase text-center">Catalogo de peliculas</p>
+  <div class="grid grid-cols-3 md:grid-cols-5 gap-4 overflow-y-scroll" >
+    <app-tv-card *ngFor="let item of tvshows" [tvShow]="item"></app-tv-card>
+  </div>
+</div>
